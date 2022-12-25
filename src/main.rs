@@ -1,9 +1,5 @@
 use warp::{Filter, Reply};
 use std::convert::Infallible;
-use xlsxwriter::{DateTime as XLSDateTime, Format, Workbook, Worksheet};
-use uuid::Uuid;
-use chrono::{Utc, DateTime};
-use lazy_static::lazy_static;
 use tokio::time::Instant;
 use serde::{Deserialize, Serialize};
 mod excel;
@@ -13,22 +9,6 @@ pub struct Thing {
     pub title: String,
     pub number1: f64,
     pub number2: f64,
-}
-
-fn create_things() -> Vec<Thing> {
-    let mut result: Vec<Thing> = vec![];
-    for _ in 0..10 {
-        result.push(Thing {
-            title: random_string(),
-            number1: 43.1_f64,
-            number2: 43.1_f64,
-        });
-    }
-    result
-}
-
-fn random_string() -> String {
-    Uuid::new_v4().to_string()
 }
 
 #[tokio::main]

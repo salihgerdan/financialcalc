@@ -75,7 +75,7 @@ fn add_number_column(
     mut width_map: &mut HashMap<u16, usize>,
 ) {
     let _ = sheet.write_number(row + 1, column, data, None);
-    //set_new_max_width(column, data.len(), &mut width_map);
+    set_new_max_width(column, 10, &mut width_map);
 }
 
 fn add_date_column(
