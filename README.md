@@ -1,4 +1,4 @@
-# financialcalc
+# rust-xlsx-financial-webapp
 
 A very simple template for applications that need to dump calculation results from a web page into an xlsx file.
 
